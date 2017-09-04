@@ -1,6 +1,6 @@
 '''
 Deploy with command:
-fab -f deploy_tools/fab_server.py setup_server:host=jrmcclure@btls.jrmcclure.com
+fab -f deploy_tools/fab_server.py setup_server:host=mcscruf61@djdo.jrmcclure.com
 '''
 from fab_settings import (
     USER_NAME, USER_PW, REPO_URL, PYTHON_VER_NUM, VENV_NAME, APP_NAME, SITE_NAME
