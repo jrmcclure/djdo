@@ -210,8 +210,7 @@ def _update_nginx_for_ssl(deploy_tools_folder):
 
 
 def _setup_cron_to_renew_letsencrypt(deploy_tools_folder):
-    conf_path = deploy_tools_folder + '/letsencrypt'
-    run('sudo cp {} /etc/cron.d'.format(conf_path))
+    run("echo '15 3 * * * /usr/bin/letsencrypt renew'|crontab")
 
 
 def _initial_db_migration(source_folder):
