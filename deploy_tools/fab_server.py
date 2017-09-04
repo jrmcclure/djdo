@@ -141,6 +141,7 @@ def _update_settings(source_folder):
 def _update_virtualenv(source_folder, virtualenv_folder):
     if not exists(virtualenv_folder + '/bin/pip'):
         run('mkvirtualenv -p ~/.pyenv/versions/{}/bin/python {}'.format(PYTHON_VER_NUM, VENV_NAME))
+    run('{}/bin/pip install gunicorn'.format(virtualenv_folder))
     run('{}/bin/pip install -r {}/requirements.txt'.format(
         virtualenv_folder, source_folder
     ))
