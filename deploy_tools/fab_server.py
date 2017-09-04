@@ -53,6 +53,7 @@ def setup_server():
     _setup_cron_to_renew_letsencrypt(deploy_tools_folder)
     _initial_db_migration(source_folder)
     _restart_gunicorn()
+    _restart_server()
 
 
 def _install_updates():
@@ -226,3 +227,7 @@ def _initial_db_migration(source_folder):
 
 def _restart_gunicorn():
     run('sudo systemctl restart gunicorn')
+
+
+def _restart_server():
+    run('sudo shutdown -r now')
