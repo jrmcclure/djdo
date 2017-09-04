@@ -14,6 +14,7 @@ import pipes
 
 
 def setup_server():
+
     env.shell = "/bin/bash -l -i -c"
     env.prompts = {
         'Command may disrupt existing ssh connections. Proceed with operation (y|n)? ': 'y\n',
@@ -26,7 +27,7 @@ def setup_server():
     }
 
     env.sudo_user = env.user
-    env.sudo_password = 'tsunami61'
+    env.sudo_password = USER_PW
     env.sudo_prompt = '[sudo] password for {}: '.format(env.user)
 
     home_folder = '/home/{}'.format(env.user)
