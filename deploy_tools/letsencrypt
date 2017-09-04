@@ -1,0 +1,4 @@
+#cron.d/letsencrypt -- periodically attempts to renew SSL ceritificate
+
+30 2 * * * /usr/bin/letsencrypt renew >> /var/log/le-renew.log
+35 2 * * * /bin/systemctl reload nginx
